@@ -1,0 +1,12 @@
+---
+# tasks file for install-nginx
+  - name: Installing nginx
+    apt:
+      name: nginx
+      state: present
+    when: ansible_os_family=="Debian"
+  - name: Installing nginx on RedHat
+    yum:
+      name: nginx
+      state: present
+    when: ansible_os_family=="RedHat"
